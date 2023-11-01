@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Provider } from "react-redux";
+import Counter from "./components/Counter";
+import store from "./store";
+import TodoList from "./components/TodoList";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <div>
-    will work on the counter part using redux store 
-   </div>
-  )
+    <Provider store={store}>
+      <div>
+        <Counter />
+        <TodoList />
+      </div>
+    </Provider>
+  );
 }
 
-export default App
+export default App;
